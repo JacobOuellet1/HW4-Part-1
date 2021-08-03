@@ -1,0 +1,120 @@
+/*
+File: style.css
+GUI Assignment: Homework 4
+Jacob Ouellet, UMass Lowell Computer Science, jacob_ouellet@student.uml.edu
+Copyright (c) 2021 by Jacob Ouellet. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Jacob Ouellet on on Aug 3, 2021 at 7:06 PM
+*/
+
+/* general styling of body + header ------------*/
+body{
+    background-color: honeydew;
+}
+
+header{
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+/* input form styling -----------------*/
+
+#input_form{
+    padding-left: 5px;
+    float: left;
+}
+.group{
+    border: 1px;
+    border-style: solid;
+    display: block;
+    width: 200px;
+    padding: 5px;
+}
+
+/* style the labels for the input form boxes*/
+label{
+    margin-top: 15px;
+    display: inline-block;
+    width: 150px;
+}
+
+/* style the input boxes for the form*/
+#rowstart, #rowend, #columnstart, #columnend{
+    width: 30px;
+    margin-top: 5px;
+}
+#rowdif, #coldif {
+    width: 70%;
+    margin-top: 5px;
+}
+#submit{
+    margin-top: 5px;
+}
+
+/* output table styling ------------- */
+
+/*style the output table and make it similar to the one show in the HW doc*/
+table, td, tr{
+    border-bottom: thin solid black;
+    border-right: thin solid black;
+    padding: 4px;
+    border-spacing: 0px;
+}
+
+/* container for the output table make it scrollable*/
+#container{
+    float: left;
+    width: 800px;
+    height: 600px;
+    overflow: auto;
+}
+table{
+    margin-left: 10px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: auto;
+}
+
+/* row formatting */
+/* make every cell in the top row black except the first cell*/
+tr:first-of-type td:nth-child(n+2){
+    background-color: black;
+    color: white;
+}
+/* make every cell in the top rows left border white except the last cells */
+tr:first-of-type td:nth-last-child(n+2){
+    border-right: thin solid white;
+}
+
+/* column formatting*/
+/* make every cell in the first column black except the first cell*/
+tr:nth-child(n+2) td:first-child{
+    background-color: black;
+    color: white;
+}
+/* make every cell in the first column's bottom border white except the last cell */
+tr:nth-last-child(n+2) td:first-child{
+    border-bottom: thin solid white;
+}
+
+/* make the first column sticky*/
+tr:nth-child(n+2) td:first-child{
+    position: sticky;
+    z-index: 9998;
+    left: 0;
+}
+/* make the first row sticky*/
+tr:first-of-type td{
+    position: sticky;
+    z-index: 9999;
+    top: 0;
+}
+
+/* error message styling ---------------------------*/
+
+#rowstart-error, #rowend-error, #rowdif-error, #columnstart-error, #columnend-error, #coldif-error{
+    color: red;
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+}

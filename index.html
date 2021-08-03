@@ -1,0 +1,77 @@
+<!--
+File: education.html
+GUI Assignment: Homework 4
+Jacob Ouellet, UMass Lowell Computer Science, jacob_ouellet@student.uml.edu
+Copyright (c) 2021 by Jacob Ouellet. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by Jacob Ouellet on Aug 3, 2021 at 7:06 PM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <h1>Multiplication Table</h1>
+        <p>The difference between the starting index and ending index must be 200 integers or less.</p> <!-- table instructions-->
+        <p>The index values must be integers between -9999 and 9999.</p> <!-- table instructions-->
+    </header>
+    <form id="input_form">  <!-- input form-->
+        <div class="group">
+            <label for="rowstart">Row Start Index:</label>  <!-- get row start index-->
+            <input type="text" id="rowstart" name="rowstart">
+            <label for="rowend">Row End Index:</label> <!-- get row end index-->
+            <input type="text" id="rowend" name="rowend">
+            <label for="rowdif">Row Difference:</label> 
+            <input type="text" id="rowdif" name="rowdif" readonly>
+        </div>
+        <div class="group">
+            <label for="columnstart">Column Start Index:</label>    <!-- get column start index-->
+            <input type="text" id="columnstart" name="columnstart">
+            <label for="columnend">Column End Index:</label> <!-- get column end index-->
+            <input type="text" id="columnend" name="columnend">
+            <label for="coldif">Column Difference:</label>
+            <input type="text" id="coldif" name="coldif" readonly>        
+        </div>
+        <div>
+            <input type="submit" id="submit" valu="Submit!">   <!-- button to submit form info and build table-->
+        </div>
+        
+    </form>
+    <div id="container">
+        <table id="multTable">  <!-- starting empty table-->
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>6</td>
+                <td>9</td>
+            </tr>
+        </table>
+    </div>
+    <script src="js/script.js"></script>    <!-- javascript reference-->
+  </body>
+</html>
