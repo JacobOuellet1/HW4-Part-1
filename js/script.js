@@ -46,7 +46,7 @@ class Table_Params{
             while(i >= this.column_end){
                 y_axis.push(i); // add the column value to the y axis 
                 for(var x = 0; x < j; x++){ // for each value in the row (x_axis) multiply it by the current column we just got and add each resulting value to the result array 
-                    results.push(i * x_axis[x])
+                    results.push(i * x_axis[x]);
                 }
                 i--;
             }
@@ -57,7 +57,7 @@ class Table_Params{
             while(i <= this.column_end){
                 y_axis.push(i); // add the column value to the y axis 
                 for(var x = 0; x < j; x++){
-                    results.push(i * x_axis[x]) // for each value in the row (x_axis) multiply it by the current column we just got and add each resulting value to the result array 
+                    results.push(i * x_axis[x]); // for each value in the row (x_axis) multiply it by the current column we just got and add each resulting value to the result array 
                 }
                 i++;
             }
@@ -155,36 +155,36 @@ $(function(){
                 range: "The difference between column start/end index must not exceed 200 integers"
             }
         }
-    }),
+    })
     // when the form is submitted make sure the form is valid. If it is build the table
     $("#input_form").submit(function(event) {
-        var isvalid = $("#input_form").valid()  // check if valid
+        var isvalid = $("#input_form").valid();  // check if valid
         if (isvalid) { 
-            process_table() // process the table if it is
+            process_table(); // process the table if it is
         }
         event.preventDefault();
     }),
 
     $("#rowdif").focus(function() {     // when focused on the row difference input calulate the difference (row difference is read only)
-        var parent = $("#rowdif").parent()  // get the div that contains rowstart,rowend, and rowdif
+        var parent = $("#rowdif").parent();  // get the div that contains rowstart,rowend, and rowdif
         const array = [];
 
         $(parent).find("input").each(function () {  // for each input in the div add it to the array and parse the int inside it
-            array.push(parseInt($(this).val()))
+            array.push(parseInt($(this).val()));
         });
 
-        this.value = Math.abs(array[0] - array[1])  // get the difference of row start and row end
+        this.value = Math.abs(array[0] - array[1]);  // get the difference of row start and row end
     }),
 
     $("#coldif").focus(function() {    // when focused on the col difference input calulate the difference (col difference is read only) 
-        var parent = $("#coldif").parent() // get the div that contains colstart, colend, and coldif
+        var parent = $("#coldif").parent(); // get the div that contains colstart, colend, and coldif
         const array = [];
 
         $(parent).find("input").each(function () { // for each input in the div add it to the array and parse the int inside it
-            array.push(parseInt($(this).val()))
+            array.push(parseInt($(this).val()));
         });
 
-        this.value = Math.abs(array[0] - array[1])  // get the difference of col start and col end
+        this.value = Math.abs(array[0] - array[1]);  // get the difference of col start and col end
     }),
 
     // used to make sure if the row or column index changes then the difference must be revalidated by making row/col difference empty
